@@ -10,15 +10,15 @@ import cv2 as cv
 import sys
 import numpy as np
 
-img=cv.imread('lenna.bmp') 
+img=cv.imread('lenna.bmp', cv.IMREAD_GRAYSCALE) 
 
 if img is None:
     sys.exit('파일을 찾을 수 없습니다.')
     
-bright_img = cv.add(img, np.array([100.0]))
+bright_img = cv.add(img, 100)
     
-cv.imshow('lenna',img)    
-cv.imshow('Brightened', bright_img)
+cv.imshow('Gray original',img)    
+cv.imshow('Gray Brightened', bright_img)
 
 cv.waitKey()
 cv.destroyAllWindows()
